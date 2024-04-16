@@ -1,0 +1,175 @@
+:root {
+	--muito-escuro: midnightblue;
+	--escuro: royalblue;
+	--claro: white;
+	--meio-termo: gold;
+	--azul: lightskyblue;
+}
+
+/* Ajustes Gerais */
+* {
+	box-sizing: border-box;
+}
+
+body {
+	margin: 0;
+	font-family: georgia, serif;
+	background: linear-gradient(midnightblue, lightskyblue, midnightblue);
+
+	display: flex;
+	flex-direction: column;
+	min-height: 100vh;
+}
+
+main {
+	flex-grow: 1;
+	display: flex;
+	flex-direction: row;
+	align-items: stretch;
+	flex-wrap: wrap;
+}
+
+/* Cabeçalho e Rodapé */
+header, footer {
+	width: 100%;
+	padding: 30px;
+	overflow: hidden;
+	text-align: center;
+	background: midnightblue;
+}
+
+footer {
+	text-align: right;
+	padding-top: 65px;
+	color: silver;
+}
+
+header h1 {
+	color: white;
+	text-transform: uppercase;
+}
+
+header p {
+	color: white;
+}
+
+/* Barra de Navegação */
+#navbar {
+	width: 100%;
+	overflow: hidden;
+	background: royalblue;
+}
+
+#navbar ul {
+	list-style-type: none; /* Tira as Bolinhas */
+	margin: 0;
+	padding: 0;
+}
+
+#navbar ul li {
+	float: left; /* Pra ficar um do lado do outro */
+}
+
+#navbar ul li a {
+	text-decoration: none; /* Tira formatação de Link */
+	padding: 15px 15px;
+	display: block;
+	color: white;
+}
+
+#navbar ul li a:hover {
+	color: gold;
+	background: midnightblue;
+}
+
+/* Coluna Laterais */
+.coluna {
+	width: 20%;
+	padding: 20px;
+	float: left;
+}
+
+.coluna p {
+	color: white;
+}
+
+.coluna ol {
+	color: white;
+}
+
+.coluna a { /* Link não Visitado */
+ 	color: white;
+ 	text-decoration: none;
+}
+
+.coluna a:visited { /* Link Visitado */
+ 	color: gold;
+}
+
+/* Coluna Central */
+article {
+	width: 60%;
+	padding: 20px;
+	float: left;
+	background: white;
+}
+
+article p {
+	text-align: justify;
+}
+
+article img {
+	width: 50%;
+	display: block;
+	margin: auto;
+}
+
+/* Responsividade */
+
+/* Telas Médias */
+@media screen and (max-width: 800px) {
+	.coluna {
+		width: 30%;
+	}
+
+	article {
+		width: 70%;
+	}
+
+	aside.coluna {
+		/* flex-basis: content; */
+		/* padding: 0; */
+		/* width: 100%; */
+		display: none;
+	}
+}
+
+/* Telas Pequenas */
+@media screen and (max-width: 600px) {
+	.coluna {
+		width: 100%;
+	}
+
+	article {
+		width: 100%;
+	}
+}
+
+/* Criando Interações: Botões e Caixas de Texto */
+.button_1 {
+	padding: 10px 15px;
+	font-size: 15px;
+	cursor: pointer;
+}
+
+.button_2 {
+	padding: 10px 15px;
+	font-size: 15px;
+	cursor: pointer;
+}
+
+.box_1 {
+	padding: 10px 15px;
+	font-size: 15px;
+	cursor: pointer;
+}

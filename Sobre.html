@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<!-- Ícone da Aba -->
+	<link rel="icon" href="Imagem Icone.png">
+	<!-- Título da Aba -->
+	<title>Programação</title>
+	<link rel="stylesheet" type="text/css" href="style.css">
+
+	<style type="text/css">
+		:root {
+			--muito-escuro: midnightblue;
+			--escuro: royalblue;
+			--claro: white;
+			--meio-termo: gold;
+			--azul: lightskyblue;
+		}
+
+		article div {
+			max-width: 400px;
+			margin: auto;
+			padding: 10px 15px;
+			font-size: 15px;
+			text-align: center;
+		}
+
+		#button_sim, #button_nao {
+			border: none;
+			border-radius: 5px;
+			color: white;
+			background-color: royalblue;
+			margin: 10px;
+			font-size: 1.5em;
+			padding: 10px 15px;
+		}
+
+		#button_sim:hover, #button_nao:hover {
+			color: gold;
+			background: midnightblue;
+		}
+
+		@media (hover: none) {
+			#button_nao:hover {
+				color: royalblue;
+				background: midnightblue;
+			}
+		}
+		
+		@media screen and (max-width: 600px) {
+			.coluna {
+				display: none;
+			}
+		}
+	</style>
+
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.2/anime.min.js" integrity="sha512-aNMyYYxdIxIaot0Y1/PLuEu3eipGCmsEUBrUq+7aVyPGMFH8z0eTP0tkqAvv34fzN6z+201d3T8HPb1svWSKHQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+	<script type="text/javascript">
+		function runaway() {
+			let distanciaX = Math.round( Math.random() * 100 ) + 100;
+			let sinalX = Math.round( Math.random() ) * 2 -1;
+			let distanciaY = Math.round( Math.random() * 70 ) + 70;
+			let sinalY = Math.round( Math.random() ) * 2 -1;
+
+			anime({
+				targets: '#button_nao',
+				translateX: '+=' + distanciaX * sinalX,
+				translateY: '+=' + distanciaY * sinalY,
+				easing: 'easeOutCirc'
+			});
+
+		}
+	</script>
+</head>
+<body>
+
+	<!-- Cabeçalho -->
+	<header>
+		<h1>Programação - Web Designer</h1>
+	</header>
+
+	<!-- Barra de Navegação -->
+	<nav id="navbar">
+		<ul>
+			<li><a href="index.html">Página Inicial</a></li>
+			<li><a href="Tipos de Desenvolvedor Web.html">Tipos de Desenvolvedor Web</a></li>
+			<li><a href="Brincadeiras.html">Brincadeiras</a></li>
+			<li><a href="Sobre.html">Sobre</a></li>
+		</ul>
+	</nav>
+
+	<!-- Conteúdo Principal -->
+	<main>
+		<!-- Coluna à Esquerda -->
+		<nav class="coluna"></nav>
+
+		<!-- Coluna Central -->
+		<article>
+
+			<h2>Botão Fujão</h2>
+			<hr>
+
+			<div>
+				<ul><li><p>E aí gostou do nosso site ?</p></li></ul>
+
+				<!-- <button id="button_sim">Sim &#128540</button> -->
+
+				<form action='https://89907414-1f18-4d45-9d3a-4b2a5c9ac587-00-nle758encixk.riker.replit.dev/julia/index.php' method='post'>
+					<input id="button_sim" type="submit" value="Sim &#128540" name='sub'>
+
+					<button id="button_nao" 
+						onmouseover="runaway()"
+						onclick="runaway()"
+						ontouchstart="runaway()"
+					>Não &#128532</button>
+				</form>
+			</div>
+
+		</article>
+
+		<!-- Coluna à Direita -->
+		<aside class="coluna"></aside>
+	</main>
+
+	<!-- Rodapé -->
+	<footer>
+		<p>Ano de: 2024</p>
+		<p>Desenvolvido por: Júlia Fialho</p>
+		<p>Para o Curso Jovem Programadora - Senac Vila-Velha</p>
+	</footer>
+
+</body>
+</html>
